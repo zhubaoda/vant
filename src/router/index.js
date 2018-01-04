@@ -8,16 +8,20 @@ let routes = [{
 	component: resolve => require(['@/pages/home.vue'], resolve),
 	children: [{
 		path: '/home',
-		component: resolve => require(['@/pages/home/index.vue'], resolve)
+		component: resolve => require(['@/pages/home/index.vue'], resolve),
+		meta:{index:0}
 	}, {
 		path: '/home/need',
-		component: resolve => require(['@/pages/home/need.vue'], resolve)
+		component: resolve => require(['@/pages/home/need.vue'], resolve),
+		meta:{index:1}
 	}, {
 		path: '/home/resource',
-		component: resolve => require(['@/pages/home/resource.vue'], resolve)
+		component: resolve => require(['@/pages/home/resource.vue'], resolve),
+		meta:{index:2}
 	}, {
 		path: '/home/mine',
-		component: resolve => require(['@/pages/home/mine.vue'], resolve)
+		component: resolve => require(['@/pages/home/mine.vue'], resolve),
+		meta:{index:3}
 	}]
 }]
 

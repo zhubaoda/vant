@@ -8,6 +8,7 @@
 </template>
 
 <script>
+//	引入Toast在watch中有用到
 	import { Toast } from 'vant';
 	export default {
 		name: 'home-index',
