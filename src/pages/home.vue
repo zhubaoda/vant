@@ -3,8 +3,7 @@
 		<div class="top">
 			<!--渲染子路由在router文件夹里面配置的子路由，父路由是home，子路由是index，need，source，mine-->
 			<router-view></router-view>
-		</div>
-		
+		</div>	
 		<van-tabbar v-model="active" @change="jump">
 			<van-tabbar-item icon="shop">首页</van-tabbar-item>
 			<van-tabbar-item icon="chat">需求</van-tabbar-item>
