@@ -4,7 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 //异步组件的使用方法resolve => require(['@/pages/home.vue'], resolve)
 let routes = [{
-	path:'/list',
+	path:'/',
 	component: resolve => require(['@/pages/list.vue'], resolve),
 },{
 	path: '/home',
