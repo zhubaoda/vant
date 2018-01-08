@@ -1,4 +1,5 @@
 # vant
+
 # common:公共的js文件
 #        common.js用于存储公用的数据，公用的方法
 #       filter.js全局的过滤器代码
