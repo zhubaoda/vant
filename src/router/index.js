@@ -2,8 +2,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 Vue.use(Router)
-
+//异步组件的使用方法resolve => require(['@/pages/home.vue'], resolve)
 let routes = [{
+	path:'/list',
+	component: resolve => require(['@/pages/list.vue'], resolve),
+},{
 	path: '/home',
 	component: resolve => require(['@/pages/home.vue'], resolve),
 	children: [{
@@ -26,6 +29,9 @@ let routes = [{
 },{
 	path:'/norFather',
 	component:resolve => require(['@/pages/norFather.vue'],resolve)
+},{
+	path:'/mix',
+	component:resolve => require(['@/pages/mix.vue'],resolve)
 }]
 
 var router = new Router({

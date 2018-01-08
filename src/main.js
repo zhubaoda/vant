@@ -8,7 +8,16 @@ import router from './router'
 import Vant from 'vant';
 import 'vant/lib/vant-css/index.css';
 Vue.use(Vant);
-//
+//全局混合
+//最先调用
+Vue.mixin({
+	created(){
+		var myOption = this.$options.myOption;
+		if(myOption){
+			console.log(myOption)
+		}
+	}
+})
 
 
 Vue.config.productionTip = false
@@ -16,6 +25,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  myOption: '我是全局混合!',
   router,
   template: '<App/>',
   components: { App }
