@@ -3,11 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+//引入全局过滤器js代码
+import commonFilters from './common/filter.js'
 
 //这是搭建vue脚手架后引入的vant框架,在main.js这个主路口引入
 import Vant from 'vant';
 import 'vant/lib/vant-css/index.css';
 Vue.use(Vant);
+//全局使用过滤器，全局注册
+Vue.use('filters',commonFilters)
 //全局混合
 //最先调用
 Vue.mixin({
@@ -18,8 +22,6 @@ Vue.mixin({
 		}
 	}
 })
-
-
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

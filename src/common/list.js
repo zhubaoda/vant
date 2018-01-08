@@ -18,6 +18,9 @@ export default {
 		title: '混合',
 		router: '/mix'
 	},{
+		title:'过滤器的使用',
+		router: '/filter'
+	},{
 		title: '首页',
 		router: '/home'
 	}, {
@@ -35,5 +38,8 @@ export default {
 	}, {
 		title: '混合',
 		router: '/mix'
+	},{
+		title:'过滤器的使用',
+		router: '/filter'
 	}]
 }

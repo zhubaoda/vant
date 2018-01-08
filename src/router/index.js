@@ -32,6 +32,9 @@ let routes = [{
 },{
 	path:'/mix',
 	component:resolve => require(['@/pages/mix.vue'],resolve)
+},{
+	path:'/filter',
+	component:resolve => require(['@/pages/filter.vue'],resolve)
 }]
 
 var router = new Router({
