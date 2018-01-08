@@ -16,7 +16,8 @@
 		},
 		watch: {
 			'$route' (to, from) {
-				if(to.path.split('/')[1] !== 'home') {
+				//对于来自或者去home路径的不执行路由动画
+				if(to.path.split('/')[1] !== 'home' && from.path.split('/')[1] !== 'home') {
 					const toDepth = to.path.split('/').length
 					const fromDepth = from.path.split('/').length;
 					let cont = Math.ceil(Math.random() * 10);
