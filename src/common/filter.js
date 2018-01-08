@@ -1,5 +1,4 @@
 import Vue from 'vue'
-
 //字符串截取过滤器
 Vue.filter("filterText", function(text, len) {
 	if(text && text.length > len && len && len > 0) {

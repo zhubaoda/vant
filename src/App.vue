@@ -1,17 +1,57 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+	<div id="app">
+		<transition :name="transitionName" mode="out-in">
+			<router-view/>
+		</transition>
+	</div>
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+	export default {
+		name: 'app',
+		data() {
+			return {
+				transitionName: ''
+			}
+		},
+		watch: {
+			'$route' (to, from) {
+				if(to.path.split('/')[1] !== 'home') {
+					const toDepth = to.path.split('/').length
+					const fromDepth = from.path.split('/').length;
+					let cont = Math.ceil(Math.random() * 10);
+					this.transitionName = cont % 2 === 0 ? 'slide-right' : 'slide-left';
+				}else{
+					this.transitionName = ''
+				}
+			}
+		}
+	}
 </script>
 
 <style>
-#app {
-  
-}
+	#app {}
+	
+	.slide-right-enter-active,
+	.slide-right-leave-active,
+	.slide-left-enter-active,
+	.slide-left-leave-active {
+		transition: all .2s
+	}
+	
+	.slide-right-enter {
+		transform: translate(-100%, 0);
+	}
+	
+	.slide-right-leave-active {
+		transform: translate(100%, 0);
+	}
+	
+	.slide-left-enter {
+		transform: translate(100%, 0);
+	}
+	
+	.slide-left-leave-active {
+		transform: translate(-100%, 0);
+	}
 </style>

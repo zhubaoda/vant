@@ -63,7 +63,6 @@
 					var size = 5;
 					//正常分页现有总数量
 					var num = this.param.pageNo * size;
-					console.log(num)
 					//当页码等于count的时候取最后一次分页size是最后一次余数
 					if(this.param.pageNo == this.count) {
 						size = this.remainder

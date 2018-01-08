@@ -10,8 +10,6 @@ import commonFilters from './common/filter.js'
 import Vant from 'vant';
 import 'vant/lib/vant-css/index.css';
 Vue.use(Vant);
-//全局使用过滤器，全局注册
-Vue.use('filters',commonFilters)
 //全局混合
 //最先调用
 Vue.mixin({
