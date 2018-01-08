@@ -23,6 +23,9 @@ let routes = [{
 		component: resolve => require(['@/pages/home/mine.vue'], resolve),
 		meta:{index:3}
 	}]
+},{
+	path:'/norFather',
+	component:resolve => require(['@/pages/norFather.vue'],resolve)
 }]
 
 var router = new Router({
