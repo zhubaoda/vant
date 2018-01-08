@@ -41,7 +41,8 @@
 						Toast('刷新成功');
                         this.isLoading = false;
 						this.param.pageNo = 1;
-						this.renderList = this.list.slice(0, 5);
+						//下拉刷新初始化数据
+					    this.renderList = this.list.slice(0,5)
 					}, 500);
 				}
 			}
@@ -62,9 +63,9 @@
 					var size = 5;
 					//正常分页现有总数量
 					var num = this.param.pageNo * size;
-					//当页码等于count的时候取最后一次分页数据num和size是加上最后一次余数和余数
+					console.log(num)
+					//当页码等于count的时候取最后一次分页size是最后一次余数
 					if(this.param.pageNo == this.count) {
-						num = 5 * (this.count - 1) + this.remainder;
 						size = this.remainder
 					}
 					this.disabled = true;
@@ -83,7 +84,8 @@
 			//count要比实际分页小1，remainder最后一次分页数量
 			this.count = parseInt(this.list.length / 5);
 			this.remainder = this.list.length - this.count * 5;
-			this.renderList = this.list.slice(0, 5);
+			//初始化列表数据
+			this.renderList = this.list.slice(0,5)
 		}
 	}
 </script>
