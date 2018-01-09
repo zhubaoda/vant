@@ -48,7 +48,40 @@
                 	   console.log(prop)
                 }
                 
-//              对于new Vue同样也是这个道理
+//              对于new Vue同样也是这个道理，打个比方
+//              写一个构造函数
+                function Bue(obj){
+                	   this.data = obj.data;
+                	   this.methods = obj.methods
+                }
+                //new 一个实例出来
+                var Bue1 = new Bue({
+                	   data:function(){
+                	   	  return {
+                	   	  	  name:'Bue'
+                	   	  }
+                	   },
+                	   methods:{
+                	   	  myadd:function(){
+                	   	  	  console.log(1111)
+                	   	  }
+                	   },
+                	   created:function(){
+                	   	
+                	   }
+                }) 
+//              这些是vue源码中的一些方法，至于其他的原理请去看vue源码
+//              1.初始化的入口，各种初始化工作
+//                initMixin(Vue) 
+//              2.数据绑定的核心方法，包括常用的$watch方法
+//                stateMixin(Vue)
+//              3.事件的核心方法，包括常用的$on，$off，$emit方法
+//                eventsMixin(Vue)
+//              4.生命周期的核心方法
+//                lifecycleMixin(Vue)
+//              5.渲染的核心方法，用来生成render函数以及VNode
+//                renderMixin(Vue)
+                
 			}
 		},
 		created(){
