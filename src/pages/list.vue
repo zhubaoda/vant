@@ -2,7 +2,7 @@
 	<div class="list">
 		<van-pull-refresh v-model="isLoading">
 			<ul v-waterfall-lower="loadMore" waterfall-disabled="disabled" waterfall-offset="400">
-				<li class="item" v-for="(item,index) in renderList" @click="jump(item.router)">{{index+1}}{{ item.title }}</li>
+				<li class="item" :key="index" v-for="(todo,index) in renderList" @click="jump(todo.router)">{{index+1}}{{ todo.title }}</li>
 			</ul>
 		</van-pull-refresh>
 	</div>
@@ -53,7 +53,8 @@
 		methods: {
 			jump(router) {
 				//跳转到对应路由
-                this.$router.push(router)
+//				console.log(router)
+                this.$router.push(router)       
 			},
 			//上拉瀑布流
 			loadMore() {
@@ -63,6 +64,7 @@
 					var size = 5;
 					//正常分页现有总数量
 					var num = this.param.pageNo * size;
+					
 					//当页码等于count的时候取最后一次分页size是最后一次余数
 					if(this.param.pageNo == this.count) {
 						size = this.remainder
@@ -101,4 +103,5 @@
 		box-sizing: border-box;
 		border: 1px solid #ccc;
 	}
+	
 </style>
