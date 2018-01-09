@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
+import store from '@/store'
 //引入全局过滤器js代码
 import commonFilters from './common/filter.js'
 
@@ -25,6 +27,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   myOption: '我是全局混合!',
   router,
   template: '<App/>',

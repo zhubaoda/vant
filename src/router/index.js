@@ -35,6 +35,12 @@ let routes = [{
 },{
 	path:'/filter',
 	component:resolve => require(['@/pages/filter.vue'],resolve)
+},{
+	path:'/active',
+	component:resolve => require(['@/pages/active.vue'],resolve)
+},{
+	path:'/infor',
+	component:resolve => require(['@/pages/information.vue'],resolve)
 }]
 
 var router = new Router({

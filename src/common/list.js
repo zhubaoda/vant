@@ -21,6 +21,9 @@ export default {
 		title:'过滤器的使用',
 		router: '/filter'
 	},{
+		title:'class与style绑定',
+		router: '/active'
+	},{
 		title: '首页',
 		router: '/home'
 	}, {
@@ -41,5 +44,8 @@ export default {
 	},{
 		title:'过滤器的使用',
 		router: '/filter'
+	},{
+		title:'class与style绑定',
+		router: '/active'
 	}]
 }
