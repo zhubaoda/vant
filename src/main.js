@@ -8,6 +8,7 @@ import store from '@/store'
 //引入全局过滤器js代码
 import commonFilters from './common/filter.js'
 
+
 //这是搭建vue脚手架后引入的vant框架,在main.js这个主路口引入
 import Vant from 'vant';
 import 'vant/lib/vant-css/index.css';
