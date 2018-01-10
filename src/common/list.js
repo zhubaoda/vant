@@ -26,5 +26,8 @@ export default {
 	},{
 		title:'vuex的使用',
 		router: '/infor'
+	},{
+		title:'render渲染',
+		router:'/render'
 	}]
 }

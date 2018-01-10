@@ -41,6 +41,9 @@ let routes = [{
 },{
 	path:'/infor',
 	component:resolve => require(['@/pages/information.vue'],resolve)
+},{
+	path:'/render',
+	component:resolve => require(['@/pages/render.vue'],resolve)
 }]
 
 var router = new Router({
