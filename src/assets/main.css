@@ -1,0 +1,23 @@
+.allview {
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: column;
+	-webkit-flex-direction: column;
+	position: relative;
+}
+
+.allview .heads {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 2;
+}
+
+.allview .main {
+	flex: 1;
+	-webkit-flex: 1;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}

@@ -24,7 +24,7 @@
 	//	}
 	import Vue from 'vue'
 	import axios from 'axios'
-	//模板渲染一个组件
+	//模板渲染一个组件,对于element ui里面如果不引入jsx，tree组件render就不能按照官网的写法去实现
 //	做这个之前要npm install babel-plugin-transform-vue-jsx --save-dev
 //    可以理解为全局注册一个组件，使用了jsx，去代替createElement复杂的写法
 	Vue.component('jsx-example', {
@@ -52,7 +52,7 @@
 			addRender() {
                console.log('我是render渲染出来的！！！');
                this.title = '我是render渲染出来的！！！'
-			}	
+			}
 		}
 	}
 </script>

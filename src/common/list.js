@@ -29,5 +29,8 @@ export default {
 	},{
 		title:'render渲染',
 		router:'/render'
+	},{
+		title:'模仿app翻页',
+		router:'/answer/6'
 	}]
 }
