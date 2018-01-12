@@ -16,7 +16,7 @@ Vue.component('blueButton',blueButton)
 Vue.component('myHeader',myHeader)
 Vue.component('optionSuccess',optionSuccess)
 //引入公共css
-//import './assets/main.css'
+import './assets/main.css'
 //这是搭建vue脚手架后引入的vant框架,在main.js这个主路口引入
 import Vant from 'vant';
 import 'vant/lib/vant-css/index.css';

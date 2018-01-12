@@ -65,7 +65,7 @@
 				setTimeout(function() {
 					$this.showFlg = true;
 				}, 100);
-				let obj = JSON.parse(localStorage.getItem('id'));
+				let obj = JSON.parse(sessionStorage.getItem('id'));
 				this.id = obj.id;
 				this.transitionName = obj.transition;
 			}
@@ -94,7 +94,7 @@
 						transition: 'slide-right'
 					};
 					obj = JSON.stringify(obj)
-					localStorage.setItem('id', obj);
+					sessionStorage.setItem('id', obj);
 					this.$router.push('/answer/' + (this.id - 1));
 				}
 				if(this.start - this.end > 200) {
@@ -104,7 +104,7 @@
 						transition: 'slide-left'
 					};
 					obj = JSON.stringify(obj)
-					localStorage.setItem('id', obj);
+					sessionStorage.setItem('id', obj);
 					this.$router.push('/answer/' + (Number(this.id) + 1))
 				}
 			},
@@ -121,18 +121,43 @@
 
 		},
 		created() {
-			//把id存放在localStorage里面
+			//把id存放在sessionStorage里面
 			this.id = this.$route.params.id;
 			var obj = {
 				id: Number(this.id),
 				transition: ''
 			};
 			obj = JSON.stringify(obj)
-			localStorage.setItem('id', obj);
+			sessionStorage.setItem('id', obj);
 		}
 	}
 </script>
-<style>
+<style scoped>
+	.allview {
+		height: 100vh;
+		overflow: hidden;
+		display: flex;
+		display: -webkit-flex;
+		flex-direction: column;
+		-webkit-flex-direction: column;
+		position: relative;
+	}
+	
+	.allview .heads {
+		width: 100%;
+		position: fixed;
+		top: 0;
+		z-index: 2;
+	}
+	
+	.allview .main {
+		flex: 1;
+		-webkit-flex: 1;
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+		margin-top: 60px;
+	}
+	
 	.answer,
 	.box {
 		width: 100vw;
