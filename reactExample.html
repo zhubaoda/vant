@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <!--引入react cdn库-->
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+//  	同vue的jsx不同的是它可以把标签写在数组里面直接通过{arr}的形式去渲染
+    	 var arr = [
+    	     <h1>标题一</h1>,
+    	     <h2>标题二</h2>
+    	 ];
+    	 var Myhead = React.createClass({
+    	 	render:function(){
+    	 		return (
+    	 			<div>
+//  	 			   类似于vue的props传值
+    	 			   <h1>{this.props.name}</h1>
+//  	 			   把数组渲染出来
+    	 			   <div>{arr}</div>
+    	 			</div>
+    	 		)
+    	 	}
+    	 })
+    	 var LikeButton = React.createClass({
+    	 	//万物皆对象，相当于vue的data
+    	 	getInitialState:function(){
+    	 		return {liked:false};
+    	 	},
+    	 	//默认props值
+    	 	getDefaultProps:function(){
+    	 		return {
+    	 			name:'默认'
+    	 		}
+    	 	},
+    	 	//methods
+    	 	handleClick:function(event){
+    	 		this.setState({liked: !this.state.liked})
+    	 	},
+    	 	//渲染函数
+    	 	render:function(){
+    	 		var text = this.state.liked ? '喜欢' : '不喜欢';
+    	 		return (
+    	 			<p onClick={this.handleClick}>{text}</p>
+    	 		)
+    	 	}
+    	 })
+      ReactDOM.render(
+      	<div>
+	        <Myhead  name="Sttot"/>
+	        <LikeButton/>
+        </div>,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

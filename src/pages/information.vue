@@ -5,11 +5,11 @@
 		<br />
 		<button @click="add" style="margin-bottom:20px;">面向对象编程</button>
 		<br />
-		<jsx-example @addRender="addRender"></jsx-example>	
+		<!--<jsx-example @addRender="addRender"></jsx-example>-->	
 	</div>
 </template>
 
-<script>
+<script type="text/babel">
 	//如果要想改成react那种写法的话，加typescript
 	//使用jsx，github  https://github.com/vuejs/babel-plugin-transform-vue-jsx#usage
 	//ts-loader typescript 必须安装,国内也可以用cnpm
