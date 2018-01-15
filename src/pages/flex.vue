@@ -40,6 +40,18 @@
 		align-items: center;
 		line-height: 50px;
 	}
+	.box3{
+		border: 1px solid #ccc;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	    /*flex-wrap: wrap;排列超出换行*/
+		flex-wrap: wrap;
+	}
+	.box3>div{
+		padding: 10px 20px;
+	}
 </style>
 <template>
 	<div>
@@ -55,7 +67,7 @@
 				<span>元素3</span>
 			</div>
 		</div>
-		
+		<!--纵向排列上下左右居中-->
 		<div class="box2" style="margin-top:10px">
 			<div>
 				<span>元素1</span>
@@ -66,6 +78,12 @@
 			<div>
 				<span>元素3</span>
 			</div>
+		</div>	
+		<!--横向排列数量多，超出换行-->
+		<div class="box3" style="margin-top:10px">
+			<div v-for="(todo,index) in list" :key="index"> 
+				<span>元素{{todo}}</span>
+			</div>
 		</div>
 	</div>
 </template>
@@ -73,7 +91,7 @@
 	export default {
 		data() {
 			return {
-				
+				list:[1,2,3,4,5,6,7,8]
 			}
 		},
 		methods: {
