@@ -32,5 +32,8 @@ export default {
 	},{
 		title:'模仿app翻页',
 		router:'/answer/6'
+	},{
+		title:'弹性盒子布局flex',
+		router:'/flex'
 	}]
 }
