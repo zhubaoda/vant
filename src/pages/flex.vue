@@ -52,6 +52,22 @@
 	.box3>div{
 		padding: 10px 20px;
 	}
+	.box4{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+	.box4>.div1{
+		width:100px;
+		background-color: red;
+	}
+	.box4>.div2{
+		background-color: black;
+		color:#fff;
+		/*flex:1;就是剩余的宽度*/
+		flex:1;
+	}
 </style>
 <template>
 	<div>
@@ -83,6 +99,15 @@
 		<div class="box3" style="margin-top:10px">
 			<div v-for="(todo,index) in list" :key="index"> 
 				<span>元素{{todo}}</span>
+			</div>
+		</div>
+		<!--一个元素占100px;另外一个盒子占剩下的-->
+		<div class="box4" style="margin-top:10px">
+			<div class="div1">
+				<span>固定</span>
+			</div>
+			<div class="div2">
+				<span>剩余</span>
 			</div>
 		</div>
 	</div>
