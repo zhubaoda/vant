@@ -50,6 +50,12 @@ let routes = [{
 },{
 	path:'/flex',
 	component:resolve => require(['@/pages/flex.vue'],resolve)
+},{
+	path:'/keyBoard',
+	component:resolve => require(['@/pages/keyBoard.vue'],resolve)
+},{
+	path:'/card',
+	component:resolve => require(['@/pages/card.vue'],resolve)
 }]
 
 var router = new Router({
