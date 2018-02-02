@@ -28,7 +28,7 @@
 				//最初给canvas填充了一个对角线上(0,0)，对角线下(200,100)的灰色矩形
 				//clearRect清除填充色参数一，二：清除的x坐标，清除的y坐标；参数三，四：清除的矩形宽度和高度
 				oCc.clearRect(ev.touches[0].clientX-this.$refs.canvas.offsetLeft+10,ev.touches[0].clientY-this.$refs.canvas.offsetTop+10,20,20);
-			}	
+			}
 		},
 		mounted(){
 			//在mounted的时候绘制出填充

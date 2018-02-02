@@ -56,6 +56,9 @@ let routes = [{
 },{
 	path:'/card',
 	component:resolve => require(['@/pages/card.vue'],resolve)
+},{
+	path:'/clock',
+	component:resolve => require(['@/pages/clock.vue'],resolve)
 }]
 
 var router = new Router({
