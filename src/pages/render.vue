@@ -4,6 +4,7 @@
 		<br />
 		<jsx-example @addRender="addRender"></jsx-example>	
 		<div>{{title}}</div>
+		<input @keyup.enter="onEnter">
 	</div>
 </template>
 
@@ -52,6 +53,9 @@
 			addRender() {
                console.log('我是render渲染出来的！！！');
                this.title = '我是render渲染出来的！！！'
+			},
+			onEnter(){
+				console.log(1222)
 			}
 		}
 	}
