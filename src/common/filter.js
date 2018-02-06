@@ -7,3 +7,14 @@ Vue.filter("filterText", function(text, len) {
 		return text;
 	}
 })
+Vue.filter('successTimeFormats', function(val) {
+    if (val) {
+        var date = new Date(val);
+        let M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+        let D = (date.getDate() < 10 ? '0' + date.getDate() : date.getDate());
+        let h = date.getHours();
+        let m = date.getMinutes(); 
+        val = M + '/' + D + ' ' + h + ':' + m;
+    }
+    return val;
+});

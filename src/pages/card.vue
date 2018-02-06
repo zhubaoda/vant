@@ -1,12 +1,11 @@
 <template>
 	<div class="card">
-		<div class="tab">
-			刮刮乐
-		</div>
+		<div class="tab">刮刮乐</div>
 		<canvas :class="myback" ref="canvas" width="200" height="100" @touchmove="touchmove"></canvas>
 		<div class="box" @click="getCode">
 			<span>{{code}}</span>
 		</div>
+		<div class="tab">抽奖</div>
 		<div style="padding: 5px 10px;margin:10px 20px;border:1px solid #ccc;text-align: center;" @click="start">开始</div>
 		<div style="padding: 5px 10px;margin:10px 20px;border:1px solid #ccc;text-align: center;" @click="end">结束</div>
 		<div class="select">
