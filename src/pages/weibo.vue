@@ -8,6 +8,17 @@
 			<div class="inbox" v-for="(todo,index) in arr" :key="index">
 				<div class="time">{{todo.time | successTimeFormats}}</div>
 				<div class="content">{{todo.content}}</div>
+				<div class="comment">
+					<img src="../../static/images/like-nor.svg" class="active" v-show="!todo.show" @click="changeShow(todo,1)" />
+					<img src="../../static/images/like.svg"  class="active" v-show="todo.show" @click="changeShow(todo,0)" />
+					<img src="../../static/images/comment.svg" class="active" @click="startComment(todo)" />
+				</div>
+				<div class="other" v-for="(item,idx) in todo.other">
+					<span>{{item.user}}:</span>{{item.content}}
+				</div>
+				<div class="input_box active" v-if="todo.autofocus" :key="index">
+					<input type="text" class="input"  v-focus="todo.autofocus"/>
+				</div>
 			</div>
 			<div class="button" v-show="arr.length>0">
 				<van-button type="default" size="small" style="background-color: #ccc;" @click="empty">清空</van-button>
@@ -28,6 +39,17 @@
 				first: false
 			}
 		},
+		directives: {
+			focus: {
+				inserted: function(el, {
+					value
+				}) {
+					if(value) {
+						el.focus();
+					}
+				}
+			}
+		},
 		methods: {
 			release() {
 				if(this.text.length) {
@@ -37,20 +59,35 @@
 					setTimeout(() => {
 						let obj = {
 							content: this.text,
-							time: new Date().getTime()
+							time: new Date().getTime(),
+							show: 0,
+							autofocus: false,
+							other: [{
+								user: '佛系少年',
+								content: '哈哈哈'
+							}]
 						}
 						this.arr.unshift(obj);
 						localStorage.setItem('weibo', JSON.stringify(this.arr));
 						this.text = '';
 						this.show = false;
-					}, 100);
-				}else{
+					}, 1);
+				} else {
 					Toast('亲~，内容不能为空哦');
 				}
 			},
 			empty() {
 				localStorage.removeItem('weibo');
 				this.arr = [];
+			},
+			changeShow(todo, idx) {
+				todo.show = idx;
+			},
+			startComment(todo) {
+				todo.autofocus = !todo.autofocus;
+			},
+			done() {
+				console.log(111)
 			}
 		},
 		created() {
@@ -92,7 +129,6 @@
 	
 	.inbox {
 		margin-bottom: 10px;
-		border-top: 1px solid #ccc;
 		padding: 5px;
 	}
 	
@@ -119,5 +155,41 @@
 	
 	.active {
 		animation: changeColor 2s forwards;
+	}
+	.input_box{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	.comment {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		border-top: 1px solid #ccc;
+		margin-top: 15px;
+	}
+	
+	.comment img {
+		width: 20px;
+		margin-right: 10px;
+	}
+	
+	.input {
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		flex:1;
+		box-sizing: border-box;
+		padding: 3px 10px;
+	}
+	
+	.other {
+		font-size: 13px;
+		color: #999;
+		text-indent: 1em;
+		margin-bottom: 10px;
+	}
+	
+	.other span {
+		color: #666;
 	}
 </style>

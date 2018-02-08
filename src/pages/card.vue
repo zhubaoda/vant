@@ -59,7 +59,8 @@
 				this.num = 0;
 				this.time = false;
 				this.counter=200;	
-				let addtime = Math.floor(Math.random()*15+5)
+				let addtime = Math.floor(Math.random()*15+5);
+				let reducetime = Math.floor(Math.random()*7+13);
                 let myFuc = ()=>{
                 	    clearInterval(interval);
                 	    if(this.num === 14) {
@@ -71,7 +72,7 @@
                 	    	  this.counter += addtime;
                 	    }
                 	    if(!this.time && this.counter>10){
-                	    	  this.counter -= 9;
+                	    	  this.counter -= reducetime;
                 	    }   
                 	    if(this.counter<=200)interval = setInterval(myFuc, this.counter);    
                 }
