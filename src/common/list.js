@@ -2,7 +2,10 @@ export default {
 	list: [{
 		title: '首页',
 		router: '/home'
-	}, {
+	},{
+		title: '进度条',
+		router: '/progress'
+	},{
 		title: '自定义指令',
 		router: '/home/need'
 	}, {

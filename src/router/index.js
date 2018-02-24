@@ -65,6 +65,9 @@ let routes = [{
 },{
 	path:'/weibo',
 	component:resolve => require(['@/pages/weibo.vue'],resolve)
+},{
+	path:'/progress',
+	component:resolve => require(['@/pages/progress.vue'],resolve)
 }]
 
 var router = new Router({
