@@ -1,6 +1,6 @@
 <template>
   <div class="progress">
-  	<div class="button" @click="goWidth">开始游戏</div>
+  	<div class="button" @click="goWidth">开始</div>
 	<div class="warpper">
 	  <span>{{fills}}%</span>
 	  <div class="fill" :style="{width: fills + '%'}"></div> 
@@ -63,5 +63,6 @@
   	padding:5px 10px;
   	width:65px;
   	border:1px solid #ccc;
+  	text-align: center;
   }
 </style>

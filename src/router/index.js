@@ -68,6 +68,9 @@ let routes = [{
 },{
 	path:'/progress',
 	component:resolve => require(['@/pages/progress.vue'],resolve)
+},{
+	path:'/aboutClass',
+	component:resolve => require(['@/pages/aboutClass.vue'],resolve)
 }]
 
 var router = new Router({

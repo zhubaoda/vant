@@ -38,5 +38,17 @@ export default {
 	},{
 		title:'弹性盒子布局flex',
 		router:'/flex'
+	},{
+		title:'类和继承',
+		router:'/aboutClass'
+	},{
+		title:'做游戏',
+		router:'/card'
+	},{
+		title:'canvas绘制时钟',
+		router:'/clock'
+	},{
+		title:'微博留言',
+		router:'/weibo'
 	}]
 }
