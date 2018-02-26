@@ -3,9 +3,6 @@ export default {
 		title: '首页',
 		router: '/home'
 	},{
-		title: '进度条',
-		router: '/progress'
-	},{
 		title: '自定义指令',
 		router: '/home/need'
 	}, {
@@ -17,6 +14,9 @@ export default {
 	}, {
 		title: '非父子组件传值',
 		router: '/norFather'
+	},{
+		title: '进度条',
+		router: '/progress'
 	}, {
 		title: '混合',
 		router: '/mix'

@@ -1,17 +1,34 @@
 <template>
   <div class="progress">
+  	<div class="button" @click="goWidth">开始游戏</div>
 	<div class="warpper">
 	  <span>{{fills}}%</span>
-	  <div class="fill" ref="myfill" :style="{width: fills + '%'}"></div> 
+	  <div class="fill" :style="{width: fills + '%'}"></div> 
 	</div>	
   </div>
 </template>
 <script>
+  import { Toast } from 'mint-ui';
   //通过修改fills的值就可以改变进度条的进度
   export default {
     data () {
 	  return {
-	    fills: 10
+	    fills: 0
+	  }
+	},
+	methods: {
+	  goWidth () {
+	  	Toast('提示信息');
+	    let func = () => {
+	    	  clearInterval(interval);
+	    	  if(this.fills < 100){
+	    	  	this.fills++;
+	    	  	interval = setInterval(func, 200);
+	    	  }else{
+//	    	  	this.$router.push('/card')
+	    	  }
+	    }
+	    let interval = setInterval(func,200);
 	  }
 	}
   }
@@ -40,5 +57,11 @@
   	width:50%;
   	height:18px;
   	background-color: yellow;
+  }
+  .progress .button{
+  	margin:10px 10px 0 10px;
+  	padding:5px 10px;
+  	width:65px;
+  	border:1px solid #ccc;
   }
 </style>

@@ -20,6 +20,7 @@ import './assets/main.css'
 //这是搭建vue脚手架后引入的vant框架,在main.js这个主路口引入
 import Vant from 'vant';
 import 'vant/lib/vant-css/index.css';
+import 'mint-ui/lib/style.css';
 Vue.use(Vant);
 //全局混合
 //最先调用
