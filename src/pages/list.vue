@@ -81,8 +81,9 @@
 				}
 			}
 		},
-		beforeRouteUpdate(){
-			console.log(211)
+		beforeRouteEnter(to, from, next){
+			//进入
+			next();
 		},
 		//路由跳转钱钩子函数
 		beforeRouteLeave (to, from, next) {
