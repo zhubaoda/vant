@@ -71,6 +71,9 @@ let routes = [{
 },{
 	path:'/aboutClass',
 	component:resolve => require(['@/pages/aboutClass.vue'],resolve)
+},{
+	path:'/birthday',
+	component:resolve => require(['@/pages/birthday.vue'],resolve)
 }]
 
 var router = new Router({
