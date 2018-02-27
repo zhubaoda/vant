@@ -81,6 +81,15 @@
 				}
 			}
 		},
+		beforeRouteUpdate(){
+			console.log(211)
+		},
+		//路由跳转钱钩子函数
+		beforeRouteLeave (to, from, next) {
+			//from是当前路由的相关信息，to是将要去的路由的相关信息
+            //next()就是放行，放他到下一个路由
+            next();
+	    },
 		created() {
 			//count要比实际分页小1，remainder最后一次分页数量
 			this.count = parseInt(this.list.length / 5);
@@ -103,5 +112,8 @@
 		box-sizing: border-box;
 		border: 1px solid #ccc;
 	}
-	
+	.list{
+		height:100vh;
+		overflow: scroll;
+	}
 </style>

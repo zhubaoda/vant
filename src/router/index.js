@@ -80,6 +80,15 @@ var router = new Router({
 	saveScrollPosition: true,
 //	suppressTransitionError: true,
 //	linkActiveClass: "myactive",
-	routes: routes
+	routes: routes,
+	//这个因为有路由动画可能用不了
+	//https://router.vuejs.org/zh-cn/advanced/scroll-behavior.html
+	scrollBehavior (to, from, savedPosition) {		
+	  if (savedPosition) {
+	    return savedPosition
+	  } else {
+	    return { x: 0, y: 0 }
+	  }		
+	}
 })
 export default router;

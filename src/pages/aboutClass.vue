@@ -1,6 +1,6 @@
 <template>
   <div>
-    es6类
+    <div @click="jump">es6类</div>
   </div>
 </template>
 <script>
@@ -24,7 +24,10 @@
     	    	
     	    }
     	    var p = new ColorPoint(1,2);
-    	    console.log(p);
+//  	    console.log(p);
+    	  },
+    	  jump() {
+    	  	this.$router.push('/');
     	  }
     },
     mounted() {
