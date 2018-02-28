@@ -56,5 +56,8 @@ export default {
 	},{
 		title:'增减选项',
 		router:'/select'
+	},{
+		title:'双向添加删除',
+		router:'/find'
 	}]
 }

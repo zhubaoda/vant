@@ -31,6 +31,7 @@
     	  }
     },
     methods: {
+    	  //添加选项
     	  add () {
     	  	if (this.todos.length < 6) {
     	  	  let obj = {
@@ -42,14 +43,15 @@
     	  	  Toast('最多只能添加6个~');
     	  	}
     	  },
+    	  //删除选项
     	  delet () {
     	  	if(this.todos.length > 2) {
     	  	  this.todos.splice(-1,1);
     	  	} else {
     	  	  Toast('选项要求数量大于等于2~')
-    	  	}
-    	    
+    	  	} 	    
     	  },
+    	  //选择选项
     	  change (index) {	
     	  	this.todos[index].judge = !this.todos[index].judge;
     	  	if(this.todos.length === 2){

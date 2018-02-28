@@ -77,6 +77,9 @@ let routes = [{
 },{
 	path:'/select',
 	component:resolve => require(['@/pages/select.vue'],resolve)
+},{
+	path:'/find',
+	component:resolve => require(['@/pages/find.vue'],resolve)
 }]
 
 var router = new Router({
