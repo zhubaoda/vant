@@ -9,9 +9,9 @@
 				<div class="time">{{todo.time | successTimeFormats}}</div>
 				<div class="content">{{todo.content}}</div>
 				<div class="comment">
-					<img src="../../static/images/like-nor.svg" class="active" v-show="!todo.show" @click="changeShow(todo,1)" />
-					<img src="../../static/images/like.svg"  class="active" v-show="todo.show" @click="changeShow(todo,0)" />
-					<img src="../../static/images/comment.svg" class="active" @click="startComment(todo)" />
+					<img src="/static/images/like-nor.svg" class="active" v-show="!todo.show" @click="changeShow(todo,1)" />
+					<img src="/static/images/like.svg"  class="active" v-show="todo.show" @click="changeShow(todo,0)" />
+					<img src="/static/images/comment.svg" class="active" @click="startComment(todo)" />
 				</div>
 				<div class="other" v-for="(item,idx) in todo.other">
 					<span>{{item.user}}:</span>{{item.content}}

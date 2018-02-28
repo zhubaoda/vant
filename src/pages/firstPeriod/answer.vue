@@ -4,7 +4,7 @@
 	</div>
 </template>
 <script>
-	import myTest from '../components/common/myTest.vue'
+	import myTest from '../../components/common/myTest.vue'
 	export default {
 		name: 'answer',
 		components:{

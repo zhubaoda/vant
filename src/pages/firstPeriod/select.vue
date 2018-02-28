@@ -6,8 +6,8 @@
   	    <div class="ipt_box">
   	  	  <input type="text" class="ipt" v-model="todo.content" />
   	    </div>
-  	    <img src="../../static/images/unselect.svg" v-show="!todo.judge" class="image" @click="change(index)"/>
-  	    <img src="../../static/images/seleted.svg" v-show="todo.judge" class="image" @click="change(index)"/>
+  	    <img src="/static/images/unselect.svg" v-show="!todo.judge" class="image" @click="change(index)"/>
+  	    <img src="/static/images/seleted.svg" v-show="todo.judge" class="image" @click="change(index)"/>
   	  </div>
   	  <span class="add" @click="add">添加选项</span>
   	  <span class="add" @click="delet">删减选项</span>

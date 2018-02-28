@@ -101,11 +101,11 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 	.c1 {
-		background: #fff url(../../static/images/first-prize.png) no-repeat center center;
+		background: #fff url(../../../static/images/first-prize.png) no-repeat center center;
 	}
 	
 	.c3 {
-		background: #fff url(../../static/images/ths.png) no-repeat center center;
+		background: #fff url(../../../static/images/ths.png) no-repeat center center;
 	}
 	
 	.box {

@@ -7,7 +7,7 @@
 
 <script>
 //引入common.js实现非父子组件之间通讯，在common中实例化的那个Vue
-import common from '../common/common.js'
+import common from '../../common/common.js'
 export default {
   data () {
     return {

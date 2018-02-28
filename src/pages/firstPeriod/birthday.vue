@@ -61,7 +61,7 @@
 </template>
 
 <script>
-  import clock from '../components/common/clock.vue'
+  import clock from '../../components/common/clock.vue'
   export default {
   	components:{clock},
     data () {

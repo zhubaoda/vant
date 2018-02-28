@@ -28,58 +28,58 @@ let routes = [{
 	}]
 },{
 	path:'/norFather',
-	component:resolve => require(['@/pages/norFather.vue'],resolve)
+	component:resolve => require(['@/pages/firstPeriod/norFather.vue'],resolve)
 },{
 	path:'/mix',
-	component:resolve => require(['@/pages/mix.vue'],resolve)
+	component:resolve => require(['@/pages/firstPeriod/mix.vue'],resolve)
 },{
 	path:'/filter',
-	component:resolve => require(['@/pages/filter.vue'],resolve)
+	component:resolve => require(['@/pages/firstPeriod/filter.vue'],resolve)
 },{
 	path:'/active',
-	component:resolve => require(['@/pages/active.vue'],resolve)
+	component:resolve => require(['@/pages/firstPeriod/active.vue'],resolve)
 },{
 	path:'/infor',
-	component:resolve => require(['@/pages/information.vue'],resolve)
+	component:resolve => require(['@/pages/firstPeriod/information.vue'],resolve)
 },{
 	path:'/render',
-	component:resolve => require(['@/pages/render.vue'],resolve)
+	component:resolve => require(['@/pages/firstPeriod/render.vue'],resolve)
 },{
 	path:'/answer/:id',
-	component:resolve => require(['@/pages/answer.vue'],resolve)
+	component:resolve => require(['@/pages/firstPeriod/answer.vue'],resolve)
 },{
 	path:'/flex',
-	component:resolve => require(['@/pages/flex.vue'],resolve)
+	component:resolve => require(['@/pages/firstPeriod/flex.vue'],resolve)
 },{
 	path:'/keyBoard',
-	component:resolve => require(['@/pages/keyBoard.vue'],resolve)
+	component:resolve => require(['@/pages/firstPeriod/keyBoard.vue'],resolve)
 },{
 	path:'/card',
-	component:resolve => require(['@/pages/card.vue'],resolve)
+	component:resolve => require(['@/pages/firstPeriod/card.vue'],resolve)
 },{
 	path:'/clock',
-	component:resolve => require(['@/pages/clock.vue'],resolve)
+	component:resolve => require(['@/pages/firstPeriod/clock.vue'],resolve)
 },{
 	path:'/pic',
-	component:resolve => require(['@/pages/pic.vue'],resolve)
+	component:resolve => require(['@/pages/firstPeriod/pic.vue'],resolve)
 },{
 	path:'/weibo',
-	component:resolve => require(['@/pages/weibo.vue'],resolve)
+	component:resolve => require(['@/pages/firstPeriod/weibo.vue'],resolve)
 },{
 	path:'/progress',
-	component:resolve => require(['@/pages/progress.vue'],resolve)
+	component:resolve => require(['@/pages/firstPeriod/progress.vue'],resolve)
 },{
 	path:'/aboutClass',
-	component:resolve => require(['@/pages/aboutClass.vue'],resolve)
+	component:resolve => require(['@/pages/firstPeriod/aboutClass.vue'],resolve)
 },{
 	path:'/birthday',
-	component:resolve => require(['@/pages/birthday.vue'],resolve)
+	component:resolve => require(['@/pages/firstPeriod/birthday.vue'],resolve)
 },{
 	path:'/select',
-	component:resolve => require(['@/pages/select.vue'],resolve)
+	component:resolve => require(['@/pages/firstPeriod/select.vue'],resolve)
 },{
 	path:'/find',
-	component:resolve => require(['@/pages/find.vue'],resolve)
+	component:resolve => require(['@/pages/firstPeriod/find.vue'],resolve)
 }]
 
 var router = new Router({
@@ -92,12 +92,17 @@ var router = new Router({
 	routes: routes,
 	//这个因为有路由动画可能用不了
 	//https://router.vuejs.org/zh-cn/advanced/scroll-behavior.html
-	scrollBehavior (to, from, savedPosition) {		
-	  if (savedPosition) {
-	    return savedPosition
-	  } else {
-	    return { x: 0, y: 0 }
-	  }		
+	scrollBehavior (to, from, savedPosition) {
+	  return new Promise ((resolve,reject) => {
+	  	setTimeout(() => {
+		  if (savedPosition) {
+		    resolve(savedPosition);
+		  } else {
+		    resolve({ x: 0, y: 0 });
+		  }	
+	  	},500)
+	  })
+	  	
 	}
 })
 export default router;

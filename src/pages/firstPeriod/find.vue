@@ -6,7 +6,7 @@
     <div class="main white">
       <div class="item" v-for="(todo,index) in arr" :key="index" @click="select(todo.id)">
       	<span>{{todo.name}}</span>
-      	<img src="../../static/images/check.svg" class="image" v-show="selectMap[todo.id]"/>
+      	<img src="/static/images/check.svg" class="image" v-show="selectMap[todo.id]"/>
       </div>
     </div>
     <div class="main">
@@ -18,7 +18,7 @@
   </div>
 </template>
 <script>
-  import list from '../common/list.js'
+  import list from '../../common/list.js'
   export default {
   	data () {
   	  return {
