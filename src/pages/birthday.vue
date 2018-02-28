@@ -68,7 +68,7 @@
     	  return {
     	  	show:false,
     	  	currentDate:null,
-    	  	minDate: new Date(1970, 0, 1),
+    	  	minDate: new Date(1968, 0, 1),
         maxDate: new Date(),
         day:'???',
         year:'???',
@@ -103,6 +103,7 @@
   .birth{
   	height:100vh;
   	width:100vw;
+  	overflow: auto;
   	background-color:#fff;
   	position: relative;
   }	

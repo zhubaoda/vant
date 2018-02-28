@@ -50,5 +50,11 @@ export default {
 	},{
 		title:'微博留言',
 		router:'/weibo'
+	},{
+		title:'选择生日',
+		router:'/birthday'
+	},{
+		title:'增减选项',
+		router:'/select'
 	}]
 }
