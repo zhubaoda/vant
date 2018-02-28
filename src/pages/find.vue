@@ -18,49 +18,14 @@
   </div>
 </template>
 <script>
+  import list from '../common/list.js'
   export default {
   	data () {
   	  return {
-  	  	arr:[{
-  	  	  id:1,
-  		  name:'三七'
-  		},{
-  		  id:2,
-  		  name:'黄芪'
-  		},{
-  		  id:3,
-  		  name:'决明子'
-  		},{
-  		  id:4,
-  	      name:'山银花'
-  	    },{
-  	    	  id:5,
-  	    	  name:'重楼'
-  	    	},{
-  	    	  id:6,
-  	    	  name:'白芨'
-  	    	},{
-  	      id:7,
-  	      name:'党参'
-  	    },{
-  	    	  id:8,
-  	    	  name:'当归'
-  	    	},{
-  	    	  id:9,
-  	    	  name:'天麻'
-  	    	},{
-  	    	  id:10,
-  	    	  name:'金银花'
-  	    	},{
-  	      id:11,
-  	      name:'黄精'
-  	    },{
-  	    	  id:12,
-  	    	  name:'丹参'
-  	    	}],
-  	  	selectArr:[],
-  	  	allMap:{},
-  	  	selectMap:{}
+  	  	arr: list.allDurg,
+  	  	selectArr: [],
+  	  	allMap: {},
+  	  	selectMap: {}
   	  }
   	},
   	methods: {
