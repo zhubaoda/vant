@@ -59,6 +59,9 @@ export default {
 	}, {
 		title: '双向添加删除',
 		router: '/find'
+	}, {
+		title: '支持拼音汉字搜索',
+		router: '/search'
 	}],
 	allDurg: [{
 		id: 1,

@@ -6,6 +6,7 @@ Vue.use(Router)
 let routes = [{
 	path:'/',
 	component: resolve => require(['@/pages/list.vue'], resolve),
+	props:true
 },{
 	path: '/home',
 	component: resolve => require(['@/pages/home.vue'], resolve),
@@ -80,6 +81,9 @@ let routes = [{
 },{
 	path:'/find',
 	component:resolve => require(['@/pages/firstPeriod/find.vue'],resolve)
+},{
+	path:'/search',
+	component:resolve => require(['@/pages/secondPeriod/search.vue'],resolve)
 }]
 
 var router = new Router({
