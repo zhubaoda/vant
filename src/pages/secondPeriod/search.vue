@@ -17,7 +17,7 @@
     data () {
     	  return {
     	  	options: [],
-    	  	list: ['我们啊','woMenA','哈哈哈','啊啊啊啊','hahahhaha']
+    	  	list: ['我们啊','woMenA','哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈','啊啊啊啊','hahahhaha']
     	  }
     },
     components: {

@@ -2,7 +2,7 @@
   <div class="v_select">
   	<input type="text" v-model="keyword" />
   	<div class="box" v-show="keyword">
-  	   <div v-for="(item,index) in options" :key="index" @click="select(item)">{{item.label}}</div>
+  	   <div v-for="(item,index) in options" :key="index" @click="select(item)" class="item">{{item.label}}</div>
   	</div>
   </div>
 </template>
@@ -49,6 +49,13 @@
   	top: 45px;
   	box-shadow: 0 0 20px #ccc;
   	border-radius: 4px;
+  	box-sizing: border-box;
+  }
+  .box .item {
+  	width:90%;
+  	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   input{
   	border:none;
