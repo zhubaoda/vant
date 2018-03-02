@@ -28,8 +28,9 @@
     	  	if(params.newVal !== '') {
     	  	  setTimeout(() => {
     	  	    this.options = this.list.filter(item => {
-    	  	  	  return item.value.toLowerCase().indexOf(params.newVal) > -1;
+    	  	  	  return item.value.toLowerCase().indexOf(params.newVal) > -1 || item.label.toLowerCase().indexOf(params.newVal) > -1;
     	  	    })
+    	  	    console.log(this.options);
     	  	  },200);
     	    } else {
     	    	  this.options = [];
