@@ -84,6 +84,9 @@ let routes = [{
 },{
 	path:'/search',
 	component:resolve => require(['@/pages/secondPeriod/search.vue'],resolve)
+},{
+	path:'/spider',
+	component:resolve => require(['@/pages/secondPeriod/spider.vue'],resolve)
 }]
 
 var router = new Router({
