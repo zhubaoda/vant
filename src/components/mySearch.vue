@@ -1,6 +1,6 @@
 <template>
   <div class="v_select">
-  	<input type="text" v-model="keyword" @blur="leave" @focus="come"/>
+  	<input type="text" v-model="keyword" @blur="change(0)" @focus="change(1)"/>
   	<div class="box" v-show="keyword && show">
   	   <div v-for="(item,index) in options" :key="index" @click="select(item)" class="item">{{item.label}}</div>
   	</div>
@@ -22,11 +22,9 @@
     	  	this.keyword = item.label;
     	  	this.$emit('select',item);
     	  },
-    	  come () {
-    	  	this.show = true;
-    	  },
-    	  leave () {
-    	  	this.show = false;
+    	  change (idx) {
+    	  	if(idx) this.show = true;
+    	  	if(!idx) this.show = false;
     	  }
     },
     watch: {
