@@ -62,6 +62,9 @@ export default {
 	}, {
 		title: '支持拼音汉字搜索',
 		router: '/search'
+	}, {
+		title: '数组去重',
+		router: '/arr'
 	}],
 	allDurg: [{
 		id: 1,

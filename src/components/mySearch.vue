@@ -67,5 +67,15 @@
   	border:none;
   	padding: 5px 10px;
   	border-radius: 4px;
-  }		
+  }	
+  .tbox {
+  	display:flex;
+  	flex-direction: row;
+    width:100%;
+  }	
+  .tbox .xbox {
+  	word-break: break-word;
+  	border:1px solid #ccc;
+  	flex:1;
+  }
 </style>

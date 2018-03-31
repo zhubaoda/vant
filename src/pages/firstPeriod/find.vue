@@ -1,7 +1,7 @@
 <template>
   <div class="find">
     <div class="main">
-      <div class="drug">热门药材</div>
+      <div class="drug" id="drug">热门药材</div>
     </div>
     <div class="main white">
       <div class="item" v-for="(todo,index) in arr" :key="index" @click="select(todo.id)">
@@ -55,6 +55,31 @@
   	  //对于数组中的药材由于每一次查询里面某个元素时都需要循环，所以初始化的时候我们把它变成对象的形式
   	  //id作为属性，数组中的每个对象作为value，这样就可以通过id去查询每一个对象，这里我们称这个对象为药材字典
   	  this.arr.map(d => this.allMap[d.id] = d);
+  	},
+  	mounted () {
+  		document.getElementById('drug').onclick = () => {
+  			function a () {
+  				var i = 0;	
+  				function b () {
+  					console.log(++i);
+  				}
+  				return b;
+  			}
+  			var c = a();
+  			c();
+  		}
+  		
+  		var arr = [8,7,3,9];
+  		for (var i = 0;i < arr.length; i++) {
+  			for (var j = 0; j < arr.length - i - 1; j++) {
+  				if (arr[j] > arr[j+1]) {
+  						var temp = arr[j];
+  				    arr[j] = arr[j+1];
+  				    arr[j+1] = temp;
+  				}
+  			}		
+  		}
+  		console.log(arr);
   	}
   }
 </script>
