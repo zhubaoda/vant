@@ -5,6 +5,10 @@
 	  <span>{{fills}}%</span>
 	  <div class="fill" :style="{width: fills + '%'}"></div> 
 	</div>	
+	<div @click="startTimer" class="code_text">{{codeText}}</div>
+	
+	<input type="text" v-model="txt" />
+	
   </div>
 </template>
 <script>
@@ -13,8 +17,18 @@
   export default {
     data () {
 	  return {
-	    fills: 0
+	    fills: 0,
+	    codeText: '获取验证码',
+	    status: 2,
+	    len: 0,
+	    txt: ''
 	  }
+	},
+	created () {
+	  let str = "T";
+	  let len = this.lenFor(str);
+	  console.log(len)
+      
 	},
 	methods: {
 	  goWidth () {
@@ -29,7 +43,38 @@
 	    	  }
 	    }
 	    let interval = setInterval(func,200);
-	  }
+	  },
+	  startTimer () {
+        let s = 5
+        this.codeText = `剩余${s}秒`
+        this.timer = setInterval(() => {
+          s--
+          s = s < 10 ? '0' + s : s
+          this.codeText = `剩余${s}秒`
+          s = +s
+          if (s <= 0) {
+            this.codeText = '获取验证码'
+            this.disabled = false
+            clearInterval(this.timer)
+          }
+        }, 1000)     
+      },
+      // 计算字节数
+      lenFor (str){
+　　    var byteLen=0,len=str.length;
+　　    if (str) {
+　　　　  for(var i=0; i<len; i++){
+　　　　　　if(str.charCodeAt(i)>255){
+　　　　　　  byteLen += 2;
+　　　　　　} else {
+　　　　　　  byteLen++;
+　　　　　　}
+　　　　  }
+　　　　  return byteLen;
+　　    } else {
+　　　　  return 0;
+　　    }
+      }
 	}
   }
 </script>
@@ -64,5 +109,8 @@
   	width:65px;
   	border:1px solid #ccc;
   	text-align: center;
+  }
+  .code_text {
+  	margin-top: 20px;
   }
 </style>

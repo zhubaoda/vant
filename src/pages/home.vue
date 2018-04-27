@@ -40,6 +40,7 @@
 			}
 		},
 		created() {
+			
 			//通过在子路由配置对应的active的数值，在meta对象里面的index
 			this.active = this.$route.meta.index;
 		}

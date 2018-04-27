@@ -92,11 +92,12 @@
             next();
 	    },
 		created() {
+			console.log(2);
 			//count要比实际分页小1，remainder最后一次分页数量
 			this.count = parseInt(this.list.length / 5);
 			this.remainder = this.list.length - this.count * 5;
 			//初始化列表数据
-			this.renderList = this.list.slice(0,5)
+			this.renderList = this.list.slice(0,5);
 		}
 	}
 </script>
