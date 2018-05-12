@@ -13,6 +13,7 @@
 </template>
 <script>
   import { Toast } from 'mint-ui';
+//import { Scroller } from 'vux'
   //通过修改fills的值就可以改变进度条的进度
   export default {
     data () {
@@ -24,6 +25,9 @@
 	    txt: ''
 	  }
 	},
+//	components: {
+//	  Scroller
+//	},
 	created () {
 	  let str = "T";
 	  let len = this.lenFor(str);

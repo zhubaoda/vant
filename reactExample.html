@@ -9,6 +9,7 @@
     <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
   </head>
   <body>
+  	<!--最后渲染这个dom-->
     <div id="example"></div>
     <script type="text/babel">
 //  	同vue的jsx不同的是它可以把标签写在数组里面直接通过{arr}的形式去渲染
@@ -16,6 +17,11 @@
     	     <h1>标题一</h1>,
     	     <h2>标题二</h2>
     	 ];
+//   直接定义样式    	 
+    	 let buttonCss = {
+    	 	color: 'red',
+    	 	fontSize: 40
+    	 }
     	 var Myhead = React.createClass({
     	 	render:function(){
     	 		return (
@@ -28,6 +34,29 @@
     	 		)
     	 	}
     	 })
+    	 
+    	 var List = React.createClass({
+    	 	getInitialState:function(){
+    	 		return {
+    	 			status: ['安徽','北京','上海']
+    	 		};
+    	 	},
+    	 	render:function(){
+    	 	  let citys = this.state.status.map((city) => {
+    	 	  	return <span key={city}>{city}, </span> 
+    	 	  })
+    	 	  
+    	 	  return (
+    	 	  	<div>
+    	 	  	  {
+    	 	  	  	citys
+    	 	  	  }
+    	 	  	</div>
+    	 	  )
+    	 	}
+    	    
+    	 })
+    	 
     	 var LikeButton = React.createClass({
     	 	//万物皆对象，相当于vue的data
     	 	getInitialState:function(){
@@ -47,7 +76,10 @@
     	 	render:function(){
     	 		var text = this.state.liked ? '喜欢' : '不喜欢';
     	 		return (
-    	 			<p onClick={this.handleClick}>{text}</p>
+    	 			<div>
+    	 			  <p onClick={this.handleClick}>{text}</p>
+    	 		      <p style={buttonCss}>{this.props.name}</p>
+    	 		    </div>
     	 		)
     	 	}
     	 })
@@ -55,6 +87,7 @@
       	<div>
 	        <Myhead  name="Sttot"/>
 	        <LikeButton/>
+	        <List/>
         </div>,
         document.getElementById('example')
       );

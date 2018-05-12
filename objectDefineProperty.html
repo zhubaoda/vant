@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+          <p>你好，<span id='nickName'></span></p>
+          <div id="introduce"></div>
+        </div>　　　　
+		<script>
+		  // proto是每个对象都有的， prototype是函数才有的,这里__proto__代表继承属性的性质
+		  // writable默认为false
+		  var obj = {}
+		  Object.defineProperty(obj, 'key', {
+		  	__proto__: null, // 继承属性的性质
+		  	value: 'static' // 这里设置value值为static，writable没设置则为false
+		  })
+		  // 这个时候 Object就会是这个 Object { key: 'static' }
+		  console.log(obj) // { key: 'static' }
+		  // 但是这个时候给它赋值他不会改变，就是因为writable为false
+		  obj["key"] = 'no static'
+		  console.log(obj) // 这个时候还是{ key: 'static' }   不会改变
+		  console.log(delete obj["key"])// 返回false
+		  
+		  
+		  
+		  // descriptors(描述符) 有两种，一种是data descriptors，另外一种是accessor descriptors 
+		  // 两种的descriptors有两个必选项,configurable和enumerable（单词意思 可分配， 可枚举）
+		  
+		  
+		  // 数据双向绑定例子
+		  // 在控制台给userInfo的属性赋值，观察现象
+		  // 但是，这个例子只是数据和dom节点的绑定，而vue.js更为复杂一点，它在网页dom和accessor之间会有两层，
+		  // 一层是Wacher，一层是Directive
+		  var userInfo = {};
+          Object.defineProperty(userInfo, "nickName", {
+            get: function(){
+              return document.getElementById('nickName').innerHTML;
+            },
+            set: function(nick){
+              document.getElementById('nickName').innerHTML = nick;
+            }
+          });
+          Object.defineProperty(userInfo, "introduce", {
+            get: function(){
+              return document.getElementById('introduce').innerHTML;
+            },
+            set: function(introduce){
+              document.getElementById('introduce').innerHTML = introduce;
+            }
+          })
+		</script>
+	</body>
+</html>
