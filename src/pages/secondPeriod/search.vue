@@ -12,6 +12,7 @@
   // 过滤和输入值相似的item，select用来获取点击选择的值
   // py是用来把汉字转换成拼音的js
   import mySearch from '../../components/mySearch.vue';
+  import interfaces from '../../interfaces/index'
   import py from '../../common/transform.js';
   export default {
     data () {
@@ -46,7 +47,7 @@
     	  this.list = this.list.map(item => {
     	  	let value = py.convertPinyin(item);
     	  	return { value: value, label: item };
-    	  })
+    	  }) 
     }
   }
 </script>
