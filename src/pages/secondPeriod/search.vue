@@ -13,6 +13,7 @@
   // py是用来把汉字转换成拼音的js
   import mySearch from '../../components/mySearch.vue';
   import interfaces from '../../interfaces/index'
+  import axios from 'axios'
   import py from '../../common/transform.js';
   export default {
     data () {
@@ -42,12 +43,15 @@
     	  	console.log(params);
     	  }
     },
-    created () {
+    async created () {
     	  // 引入的tansform.js是用来把汉字转换成拼音的
     	  this.list = this.list.map(item => {
     	  	let value = py.convertPinyin(item);
     	  	return { value: value, label: item };
     	  }) 
+    	  let res = await interfaces.getInfor()
+    	  console.log(16,res)
+    	 
     }
   }
 </script>

@@ -8,6 +8,7 @@ export default function Fetch(host) {
   	  localStorage.removeItem('token');
   	  return this.fetch(url, auth, data, method)	
   	}
+  	return response.data
   }
   
   this._request = async (url, auth, data, method) => {
@@ -15,7 +16,8 @@ export default function Fetch(host) {
   	if (auth) {
   	  headers['TEST-TOKEN'] = await this._getToken()
   	}
-  	return axios({ url: url, data: data, headers: headers, method: method })
+  	let res = await axios({ url: url, data: data, headers: headers, method: method })
+  	return res
   }
   
   this.login = async () => {
