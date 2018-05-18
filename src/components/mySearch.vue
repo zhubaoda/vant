@@ -56,6 +56,8 @@
   	box-shadow: 0 0 20px #ccc;
   	border-radius: 4px;
   	box-sizing: border-box;
+  	background-color: #fff;
+  	z-index: 20;
   }
   .box .item {
   	width:90%;

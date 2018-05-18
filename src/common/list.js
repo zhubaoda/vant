@@ -65,6 +65,9 @@ export default {
 	}, {
 		title: '数组去重',
 		router: '/arr'
+	}, {
+		title: '从接口获取数据',
+		router: '/joggle'
 	}],
 	allDurg: [{
 		id: 1,

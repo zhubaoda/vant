@@ -1,9 +1,19 @@
 <template>
   <div class="search">
   	<div class="main">
-  	  <div class="box">
+  	  <div class="boxs">
   	  	<mySearch @remoteMethod="remoteMethod" @select="select" :options="options"></mySearch>
   	  </div>
+  	  <p style="
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+">
+ 该属性的表现是现实中你见到的吸附效果。（CSS3）* CSS3新增属性可能存在描述错误及变更，仅供参考，持续更新
+</p>
+  	  <upLoadImg></upLoadImg>
   	</div>
   </div>
 </template>
@@ -15,15 +25,18 @@
   import interfaces from '../../interfaces/index'
   import axios from 'axios'
   import py from '../../common/transform.js';
+  import upLoadImg from '../../components/common/upLoadImg.vue'
   export default {
     data () {
     	  return {
     	  	options: [],
+    	  	mydata: null,
     	  	list: ['我们啊','woMenA','哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈','啊啊啊啊','hahahhaha']
     	  }
     },
     components: {
-    	  mySearch
+    	  mySearch,
+    	  upLoadImg
     },
     methods: {
     	  remoteMethod (params) {
@@ -48,10 +61,7 @@
     	  this.list = this.list.map(item => {
     	  	let value = py.convertPinyin(item);
     	  	return { value: value, label: item };
-    	  }) 
-    	  let res = await interfaces.getInfor()
-    	  console.log(16,res)
-    	 
+    	  })
     }
   }
 </script>
