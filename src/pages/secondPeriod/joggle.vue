@@ -20,19 +20,23 @@
   export default {
   	data () {
   	  return {
-  	  	name: '',
-  	  	sex: ''
+  	  	
   	  }
+  	},
+  	computed: {
+  	   name () {
+  		 return this.$store.state.infor.name
+  	   },
+  	   sex () {
+  	   	 return this.$store.state.infor.sex
+  	   }
   	},
   	methods: {
-  	  async getData () {
-  	  	let res = await interfaces.getInfor();
-  	  	this.name = res.name;
-  	  	this.sex = res.sex;
-  	  }
+  	  
   	},
   	created () {
-      this.getData();
+  	  // 在vuex里面调用接口	
+      this.$store.dispatch('getInfor')
   	}
   }
 </script>

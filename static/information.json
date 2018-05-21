@@ -1,4 +1,10 @@
 {
-  "name":"朱宝达",
-  "sex":"男"
+  "hasError": false,
+  "success": true,
+  "error": "",	
+  "code": "200",  
+  "data": {
+  	 "name":"朱宝达",
+  	 "sex":"男"
+  }
 }

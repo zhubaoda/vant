@@ -96,6 +96,12 @@ let routes = [{
 },{
 	path:'/joggle',
 	component:resolve => require(['@/pages/secondPeriod/joggle.vue'],resolve)
+},{
+	path:'/cart',
+	component:resolve => require(['@/pages/secondPeriod/cart.vue'],resolve)
+},{
+	path:'/onpull',
+	component:resolve => require(['@/pages/secondPeriod/onPull.vue'],resolve)
 }]
 
 var router = new Router({
