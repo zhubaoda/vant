@@ -68,6 +68,12 @@ export default {
 	}, {
 		title: '从接口获取数据',
 		router: '/joggle'
+	}, {
+		title: '上拉刷新，下拉加载',
+		router: '/onpull'
+	}, {
+		title: '选择卡',
+		router: '/tabBar'
 	}],
 	allDurg: [{
 		id: 1,

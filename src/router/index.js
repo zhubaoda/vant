@@ -102,7 +102,10 @@ let routes = [{
 },{
 	path:'/onpull',
 	component:resolve => require(['@/pages/secondPeriod/onPull.vue'],resolve)
-}]
+},{
+	path:'/tabBar',
+	component:resolve => require(['@/pages/secondPeriod/tabBar.vue'],resolve)
+ }]
 
 var router = new Router({
 //	mode: 'history',
@@ -122,7 +125,7 @@ var router = new Router({
 		  } else {
 		    resolve({ x: 0, y: 0 });
 		  }	
-	  	},500)
+	  	}, 500)
 	  })
 	  	
 	}

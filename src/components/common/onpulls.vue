@@ -68,7 +68,8 @@
   	  	positions: {
   	  	  sY: 0,
   	  	  eY: 0
-  	  	}
+  	  	},
+  	  	scrollTop: 0
   	  }
   	},
   	props: {
@@ -102,25 +103,26 @@
   	// 监听touchstart，touchmove，touchend模拟下拉刷新事件
   	// 监听scroll事件， 模拟上拉加载事件
   	mounted () {
-  	  this.$refs.touchBox.addEventListener('touchstart', (e) => {
-  	  	this.positions.sY = e.targetTouches[0].pageY
-  	  })
-  	  this.$refs.touchBox.addEventListener('touchmove', (e) => { 
-	  	this.positions.eY = e.targetTouches[0].pageY
-        if (this.positions.eY - this.positions.sY < 150) {
-        	  this.$refs.touchBox.style.paddingTop = this.positions.eY - this.positions.sY + 'px';
-        }     
-  	  })
-  	  this.$refs.touchBox.addEventListener('touchend', (e) => {
-  	  	if (this.positions.eY - this.positions.sY <= 100) {
-  	  	  this.initData()
-  	  	}
-  	  })
   	  this.$refs.touchBox.addEventListener('scroll', (e) => {
+  	  	this.scrollTop = e.target.scrollTop;
         if (e.target.scrollTop === e.target.scrollHeight - document.body.clientHeight) {
         	  this.$emit('changePullDown') 
         }
   	  })
+  	  this.$refs.touchBox.addEventListener('touchstart', (e) => {
+  	  	this.positions.sY = e.targetTouches[0].pageY;
+  	  })
+  	  this.$refs.touchBox.addEventListener('touchmove', (e) => { 
+	  	this.positions.eY = e.targetTouches[0].pageY
+        if (this.positions.eY - this.positions.sY < 150 && this.positions.eY - this.positions.sY > 0) {
+        	  this.$refs.touchBox.style.paddingTop = this.positions.eY - this.positions.sY + 'px';
+        	  e.preventDefault()
+        }    
+  	  })
+  	  this.$refs.touchBox.addEventListener('touchend', (e) => {
+  	  	this.initData()
+  	  })
+  	 
   	}
   }
 </script>

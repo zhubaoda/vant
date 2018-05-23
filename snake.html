@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <script>
+	  	var map;
+	  	var snake;
+	  	var food;
+	  	var timer;
+	  	var sum=0;
+	  	
+	  	
+	  	// 地图类
+	  	function Map() {
+	  	  this.width = 800;
+	  	  this.height = 400;
+	  	  this.position = 'absolute';
+	  	  this.color = '#ccc';
+	  	  this._map = null;
+	  	  this.show = function() {
+	  	  	this._map = document.createElement('div');
+	  	  	this._map.style.width = this.width + 'px';
+	  	  	this._map.style.height = this.height + 'px';
+	  	  	this._map.style.position = this.position;
+	  	  	this._map.style.backgroundColor = this.color;
+	  	  	 	  	
+	  	  	document.getElementsByTagName('body')[0].appendChild(this._map);
+	  	  }
+	  	}
+	  	
+	  	// 食物类
+	  	function Food() {
+	  	  this.width = 20;
+	  	  this.height = 20;
+	  	  this.position = 'absolute';
+	  	  this.color = '#00ff00';
+	  	  this._food = null;
+	  	  this.x = 0;
+	  	  this.y = 0;
+	  	  
+	  	  this.show = function() {
+	  	  	if (this._food == null) {
+	  	  	  this._food = document.createElement('div');
+	  	  	  this._food.style.width = this.width + 'px';
+	  	  	  this._food.style.height = this.height + 'px';
+	  	  	  this._food.style.position = this.position;
+	  	  	  this._food.style.backgroundColor = this.color;
+	  	  	}
+	  	  	
+	  	  	this.x = Math.floor(Math.random()*40);
+	  	  	this.y = Math.floor(Math.random()*20);
+	  	  	this._food.style.left = this.x * this.width + 'px';
+	  	  	this._food.style.top = this.y * this.height + 'px';
+	  	  	
+	  	  }
+	  	}
+	  	
+	  	
+	  	// 蛇类
+	  	function Snake() {
+	  	  this.width = 20;
+	  	  this.height = 20;
+	  	  this.position = 'absolute';
+	  	  this.direct = '';
+	  	  this.body = [ [3, 2, 'red', null], [2, 2, 'blue', null], [1, 2, 'blue', null] ];
+	  	  
+	  	  this.setDirect = function(code) {
+	  	  	switch(code) {
+	  	  	  case 37:
+	  	  	    this.direct = 'left';
+	  	  	      break;
+	  	  	  case 38:
+	  	  	    this.direct = 'up';
+	  	  	       break;
+	  	  	  case 39:
+	  	  	    this.direct = 'right';
+	  	  	       break;
+	  	  	  case 40:
+	  	  	    this.direct = 'down';
+	  	  	       break;
+	  	  	}
+	  	  }
+	  	  
+	  	  this.show = function() {
+	  	  	for (let i=0;i<this.body.length;i++) {
+	  	  	  if (this.body[i][3] == null) {
+	  	  	    this.body[i][3] = document.createElement('div');
+                this.body[i][3].style.width = this.width +'px';
+                this.body[i][3].style.height = this.height +'px';
+                this.body[i][3].style.position = this.position;
+                this.body[i][3].style.backgroundColor = this.body[i][2];
+                map._map.appendChild(this.body[i][3]);
+	  	  	  }
+	  	  	  this.body[i][3].style.left=this.body[i][0]*this.width+'px';
+              this.body[i][3].style.top=this.body[i][1]*this.height+'px';
+	  	  	}
+	  	  }
+	  	  
+	  	  this.move = function() {
+	  	  	var length = this.body.length - 1;
+	  	  	for (let i=length;i<0;i--) {
+	  	  	  this.body[i][0] = this.body[i-1][0];
+	  	  	  this.body[i][1] = this.body[i-1][1];
+	  	  	}
+	  	  	
+	  	    switch(this.direct) {
+                 case 'right':
+                     this.body[0][0]=this.body[0][0]+1;
+                     break;
+                 case 'down':
+                     this.body[0][1]=this.body[0][1]+1;
+                     break;
+                 case 'left':
+                     this.body[0][0]=this.body[0][0]-1;
+                     break;
+                 case 'up':
+                     this.body[0][1]=this.body[0][1]-1;
+                     break;
+                 default:
+                     return;
+           }
+           if(this.body[0][0]==food.x&&this.body[0][1]==food.y) {
+             var x=this.body[length][0];
+             var y=this.body[length][1];
+             sum++;
+             document.title='分数:'+sum+'分';
+             this.body.push([x,y,'blue',null]);
+             food.show();
+           }
+             
+             if(this.body[0][0]<0 || this.body[0][0]>39 ||this.body[0][1]<0 ||this.body[0][1]>19)
+             {
+                 alert('撞墙死');
+                 clearTimeout(timer);
+                 return;
+             }
+             
+             //吃到自己死
+             for(var i=1;i<this.body.length;i++)
+             {
+                 if(this.body[0][0]==this.body[i][0]&&this.body[0][1]==this.body[i][1])
+                 {
+                     alert('吃到自己死');
+                     clearTimeout(timer);
+                     return;
+                 }
+             }
+             
+             this.show();
+             
+	  	  }
+	  	}
+	  	
+	  	window.onload  = function() {
+	  	  map = new Map();
+	  	  map.show();
+	  	  
+	  	  food = new Food();
+	  	  food.show();
+	  	    	  
+          snake = new Snake(); //实例化蛇类对象
+          snake.show();
+          timer = setInterval('snake.move()',100);
+          
+          document.onkeydown = function() {
+             var code;
+           if (window.event) {
+             code=window.event.keyCode;
+           } else {
+             code = event.keyCode;
+           }
+           snake.setDirect(code);
+          }
+	  	}
+	  	
+	  </script>
+	</body>
+</html>

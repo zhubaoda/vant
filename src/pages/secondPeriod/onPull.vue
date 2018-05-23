@@ -39,6 +39,12 @@
   	components: {
   	  onpulls
   	},
+  	created() {
+      function fact(n){
+        return n > 1 ? n * fact(n-1) : 1;
+      }
+      console.log(fact(0) + fact(0) + fact(0) + fact(0))
+  	},
   	methods: {
   	  // 模拟的获取接口数据函数	
   	  async getList() {
