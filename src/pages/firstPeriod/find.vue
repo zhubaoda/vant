@@ -79,7 +79,6 @@
   				}
   			}		
   		}
-  		console.log(arr);
   	}
   }
 </script>

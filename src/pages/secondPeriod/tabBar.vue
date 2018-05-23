@@ -28,16 +28,26 @@
     components: {
     	  tab
     },
+    computed: {
+    	  list () {
+    	  	return this.$store.state.tabbar.list
+    	  },
+    	  total () {
+    	  	return this.$store.state.tabbar.total
+    	  }
+    },
     methods: {
     	  // 切换tab
     	  selectBar (index) {
     	  	this.idx = index;
     	  }
     },
-    created () {
+    async created () {
     	  // 初始化数据
     	  this.tabList = ['选项一', '选项二', '选择三', '选项四', '选项五'];
     	  this.idx = 0;
+    	  // 获取数据，这里仅仅是模拟一下接口，没做展示
+    	  await this.$store.dispatch('getTabBarList')
     }
   }
 </script>

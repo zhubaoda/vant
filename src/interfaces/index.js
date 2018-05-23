@@ -10,5 +10,8 @@ export default {
    },
    async getInfor () {
    	 return await this.fetch('../../static/information.json', true,  'GET')
+   },
+   async getTabBarList () {
+   	 return await this.fetch('../../static/tab_bar.json', true,  'GET')
    }
 }
