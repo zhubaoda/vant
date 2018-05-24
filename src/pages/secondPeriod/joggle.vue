@@ -15,8 +15,6 @@
 </template>
 
 <script>
-  // 调用接口的js	
-  import interfaces from '../../interfaces/index'
   export default {
   	data () {
   	  return {

@@ -105,7 +105,13 @@ let routes = [{
 },{
 	path:'/tabBar',
 	component:resolve => require(['@/pages/secondPeriod/tabBar.vue'],resolve)
- }]
+},{
+ 	path:'/chatA',
+ 	component:resolve => require(['@/pages/secondPeriod/chatA.vue'],resolve)
+},{
+ 	path:'/chatB',
+ 	component:resolve => require(['@/pages/secondPeriod/chatB.vue'],resolve)
+}]
 
 var router = new Router({
 //	mode: 'history',
