@@ -80,6 +80,9 @@ export default {
 	}, {
 		title: 'less的语法',
 		router: '/less'
+	}, {
+		title: '第一行居中，超过两行居左省略',
+		router: '/oneline'
 	}],
 	allDurg: [{
 		id: 1,

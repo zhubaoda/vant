@@ -117,6 +117,9 @@ let routes = [{
 },{
 	path:'/less',
 	component:resolve => require(['@/pages/secondPeriod/less.vue'],resolve)
+},{
+	path:'/oneline',
+	component:resolve => require(['@/pages/secondPeriod/oneLineCenter.vue'],resolve)
 }]
 
 var router = new Router({
