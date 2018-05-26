@@ -111,6 +111,9 @@ let routes = [{
 },{
  	path:'/chatB',
  	component:resolve => require(['@/pages/secondPeriod/chatB.vue'],resolve)
+},{
+	path:'/shake',
+	component:resolve => require(['@/pages/secondPeriod/shake.vue'],resolve)
 }]
 
 var router = new Router({

@@ -176,8 +176,39 @@
    	  	}
    	  },
    	  async created () {
+   	  	// 全局混入
+   	  	this.setRouter();
    	  	await this.getData();
-   	  }
+   	  	// js实现继承的方法
+   	  	// 先有一个父类构造函数 
+   	  	function father () {
+   	  	   this.name = '父亲';
+   	  	   this.sex = '男';
+   	  	}
+   	  	// 原型方法 
+   	  	father.prototype.study = function () {
+   	  	  console.log('父类的方法')
+   	  	}
+   	  	// 1. 原型链继承
+   	  	function Son1() {
+   	     
+   	  	}
+   	  	// 子类的原型等于父类的实例
+   	  	Son1.prototype = new father()
+   	  	let mySon = new Son1();
+   	  	// 2. 构造继承
+   	  	function Son2() {
+   	  	  // 把子类的this通过传参传给父类的构造函数	
+   	  	  father.call(this)
+   	  	}
+   	  	  	
+   	  	// 3. 实例继承
+   	  	// 在子类的构函数中return 父类的实例
+   	  	function Son3() {
+   	  	  var instant = new father()
+   	  	  return instant
+   	  	}   	  	
+   	 }
    }
 </script>
 

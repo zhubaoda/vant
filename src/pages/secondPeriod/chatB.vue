@@ -152,7 +152,7 @@
    	  	  let obj = {};
    	  	  obj.title = this.word;
    	  	  obj.id = 'girl';
-   	  	  obj.headImg = '../../../static/images/head.png';
+   	  	  obj.headImg = '../../../static/images/head-girl.png';
    	  	  if (!this.list) {
    	  	  	this.list = [];
    	  	  }

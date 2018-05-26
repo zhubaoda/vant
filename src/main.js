@@ -24,7 +24,13 @@ import 'mint-ui/lib/style.css';
 Vue.use(Vant);
 //全局混合
 //最先调用
+
 Vue.mixin({
+	methods: {
+	  setRouter () {
+	  	console.log(2333)
+	  }
+	},
 	created(){
 		var myOption = this.$options.myOption;
 		if(myOption){

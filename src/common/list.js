@@ -74,6 +74,9 @@ export default {
 	}, {
 		title: '选择卡',
 		router: '/tabBar'
+	}, {
+		title: '摇一摇',
+		router: '/shake'
 	}],
 	allDurg: [{
 		id: 1,
