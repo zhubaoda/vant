@@ -207,7 +207,10 @@
    	  	function Son3() {
    	  	  var instant = new father()
    	  	  return instant
-   	  	}   	  	
+   	  	} 
+   	  	
+   	  	// sass 和 less   https://www.w3cplus.com/css/an-introduction-to-less-and-comparison-to-sass.html
+   	  	// 混合， 参数混合，嵌套规则， 运算， 颜色功能，命名空间， 作用域， js表达式
    	 }
    }
 </script>

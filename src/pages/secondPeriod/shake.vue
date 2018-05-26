@@ -1,18 +1,35 @@
 <style lang="less" scoped>
-  .shake {
-  	width: 100%;
-  	height: 100vh;
-  	background-color: #fff;
+  .display {
   	display: flex;
   	flex-direction: row;
   	align-items: center;
   	justify-content: center;
   }
+  .border-radius(@radius) {
+  	border-radius: @radius;
+  }
+  /*参数混合*/
+  .how-box(@width, @height) {
+  	width: @width;
+  	height: @height;
+  }
+  .shake {
+  	width: 100%;
+  	height: 100vh;
+  	background-color: #fff;
+  	/*混合*/
+  	.display;
+  	.word {
+  	  .how-box(100px, 100px);
+  	  .border-radius(15px);
+  	  border: 1px solid #ccc;
+  	}
+  }
 </style>
 
 <template>
   <div class="shake">
-  	<strong class="word">社会摇</strong>
+  	<div class="word">社会摇</div>
   </div>
 </template>
 

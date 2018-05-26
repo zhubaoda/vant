@@ -77,6 +77,9 @@ export default {
 	}, {
 		title: '摇一摇',
 		router: '/shake'
+	}, {
+		title: 'less的语法',
+		router: '/less'
 	}],
 	allDurg: [{
 		id: 1,
