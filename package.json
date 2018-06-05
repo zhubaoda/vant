@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "echarts": "^4.1.0",
     "highcharts": "^6.0.7",
     "mint-ui": "^2.2.13",
     "vant": "^0.12.0",

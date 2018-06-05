@@ -91,8 +91,22 @@
 			},
 
 		},
-		mounted() {
-			this.getClock()
+		async mounted() {
+//			this.getClock()
+            let oX = this.$refs.myclock;
+            let oCc = this.$refs.myclock.getContext('2d');
+            var img=new Image()
+            img.src="../../../static/images/gou.jpg"
+            img.onload = function () {
+            	  oCc.drawImage(img,50,50,100,100)
+            	}
+            var dataURL;
+            setTimeout(() => {
+            	  dataURL = oX.toDataURL("image/jpg");
+            	  console.log(dataURL)
+            },4000)
+            
+            
 		}
 	}
 </script>

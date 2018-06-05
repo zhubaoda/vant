@@ -38,6 +38,26 @@ Vue.mixin({
 		}
 	}
 })
+
+// 自定义长按事件
+Vue.directive('holdDown', {
+   bind: (el, binding) => {
+   	  let start;
+   	  el.addEventListener('touchstart', (e) => {
+   	  	start = new Date().getTime();
+   	  }, false)
+   	  el.addEventListener('touchend', (e) => {
+   	  	start = new Date().getTime() - start;
+   	  	if (start >= 500) {
+   	  	  binding.value.func.call(this, e)
+   	  	}
+   	  }, false)
+   }
+})
+
+
+
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

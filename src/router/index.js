@@ -120,6 +120,12 @@ let routes = [{
 },{
 	path:'/oneline',
 	component:resolve => require(['@/pages/secondPeriod/oneLineCenter.vue'],resolve)
+},{
+	path:'/myphoto',
+	component:resolve => require(['@/pages/echats/myphoto.vue'],resolve)
+},{
+    path: '/copy',
+    component:resolve => require(['@/pages/secondPeriod/copyIt.vue'],resolve)
 }]
 
 var router = new Router({
@@ -141,8 +147,7 @@ var router = new Router({
 		    resolve({ x: 0, y: 0 });
 		  }	
 	  	}, 500)
-	  })
-	  	
+	  })	  	
 	}
 })
 export default router;
