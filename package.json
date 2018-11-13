@@ -20,6 +20,7 @@
     "mint-ui": "^2.2.13",
     "vant": "^0.12.0",
     "vue": "^2.5.2",
+    "vue-amap": "^0.5.8",
     "vue-class-component": "^6.1.2",
     "vue-router": "^3.0.1",
     "vuex": "^2.4.1"

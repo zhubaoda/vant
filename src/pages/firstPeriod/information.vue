@@ -5,7 +5,7 @@
 		<br />
 		<button @click="add" style="margin-bottom:20px;">面向对象编程</button>
 		<br />
-		<!--<jsx-example @addRender="addRender"></jsx-example>-->	
+		<jsx-example @addRender="addRender"></jsx-example>	
 	</div>
 </template>
 

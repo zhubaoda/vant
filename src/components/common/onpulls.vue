@@ -105,6 +105,7 @@
   	mounted () {
   	  this.$refs.touchBox.addEventListener('scroll', (e) => {
   	  	this.scrollTop = e.target.scrollTop;
+  	  	console.log(313123)
         if (e.target.scrollTop === e.target.scrollHeight - document.body.clientHeight) {
         	  this.$emit('changePullDown') 
         }

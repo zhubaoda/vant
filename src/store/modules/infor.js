@@ -17,7 +17,11 @@ const actions = {
     if (!res.hasError) {
       commit('getInfor', res.data);
     }
+  },
+  async getStatus({commit, state}) {
+    
   }
+
 }
 //在mutation中去改变state的值
 const mutations = {

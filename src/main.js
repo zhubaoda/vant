@@ -11,6 +11,8 @@ import commonFilters from './common/filter.js'
 import blueButton from './components/common/blueButton.vue'
 import myHeader from './components/common/header.vue'
 import optionSuccess from './components/common/optionSuccess.vue'
+import VueAMap from 'vue-amap';
+
 
 Vue.component('blueButton',blueButton)
 Vue.component('myHeader',myHeader)
@@ -21,7 +23,26 @@ import './assets/main.css'
 import Vant from 'vant';
 import 'vant/lib/vant-css/index.css';
 import 'mint-ui/lib/style.css';
+import '@/assets/iconfont/iconfont.css';
 Vue.use(Vant);
+Vue.use(VueAMap);
+
+
+VueAMap.initAMapApiLoader({
+  key: 'zhubaodakey',
+  plugin: [
+          'AMap.Autocomplete',
+	        'AMap.PlaceSearch', 
+	        'AMap.Scale', 
+	        'AMap.OverView', 
+	        'AMap.ToolBar', 
+	        'AMap.MapType', 
+	        'AMap.PolyEditor',
+	        'AMap.CircleEditor',
+	        'AMap.Geolocation'
+        ],
+  v: '1.4.4'
+});
 //全局混合
 //最先调用
 

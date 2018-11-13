@@ -126,6 +126,24 @@ let routes = [{
 },{
     path: '/copy',
     component:resolve => require(['@/pages/secondPeriod/copyIt.vue'],resolve)
+},{
+	path: '/paging',
+	component:resolve => require(['@/pages/secondPeriod/paging.vue'],resolve)
+},{
+	path: '/flight',
+	component:resolve => require(['@/pages/secondPeriod/flight.vue'],resolve)
+},{
+	path: '/getposition',
+	component:resolve => require(['@/pages/echats/getPosition.vue'],resolve)
+},{
+	path: '/tabselect',
+	component:resolve => require(['@/pages/tabSelect.vue'],resolve)	
+},{
+	path: '/vantlist',
+	component:resolve => require(['@/pages/echats/vantLists.vue'],resolve)	
+},{
+	path: '/vuejsx',
+	component:resolve => require(['@/pages/firstPeriod/vuejsx.vue'],resolve)	
 }]
 
 var router = new Router({
